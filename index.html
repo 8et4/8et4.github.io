@@ -73,10 +73,34 @@
     </div>
 
     <div class="section">
-        <h2>ADB / USB Debug</h2>
-        <button class="btn success" onclick="go('intent:#Intent;action=android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end')">Developer Options</button>
-        <button class="btn" onclick="go('intent:#Intent;action=com.android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end')">Dev Options (Alt)</button>
+        <h2>ADB / Developer Options (TRY ALL)</h2>
+        <button class="btn success" onclick="go('intent:#Intent;action=android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end')">Dev Options (Action)</button>
+        <button class="btn success" onclick="go('intent:#Intent;component=com.android.settings/.DevelopmentSettings;end')">Dev Options (Component)</button>
+        <button class="btn success" onclick="go('intent:#Intent;component=com.android.settings/.Settings$DevelopmentSettingsActivity;end')">Dev Options (Settings$Dev)</button>
+        <button class="btn success" onclick="go('intent:#Intent;component=com.android.settings/.development.DevelopmentSettingsActivity;end')">Dev Options (development.Dev)</button>
+        <button class="btn" onclick="go('intent:#Intent;action=com.android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end')">Dev Options (com.android)</button>
         <button class="btn" onclick="go('intent:#Intent;action=android.settings.USB_SETTINGS;end')">USB Settings</button>
+        <button class="btn" onclick="go('intent:#Intent;component=com.android.settings/.connecteddevice.usb.UsbDetailsFragment;end')">USB Details</button>
+        <button class="btn" onclick="go('intent:#Intent;component=com.android.settings/.Settings$UsbSettingsActivity;end')">USB Settings Activity</button>
+    </div>
+
+    <div class="section">
+        <h2>About Device (Tap Build Number)</h2>
+        <button class="btn success" onclick="go('intent:#Intent;action=android.settings.DEVICE_INFO_SETTINGS;end')">About Device (Action)</button>
+        <button class="btn success" onclick="go('intent:#Intent;component=com.android.settings/.Settings$DeviceInfoSettingsActivity;end')">About Device (Component)</button>
+        <button class="btn" onclick="go('intent:#Intent;component=com.android.settings/.DeviceInfoSettings;end')">Device Info Settings</button>
+        <button class="btn" onclick="go('intent:#Intent;component=com.android.settings/.Settings$MyDeviceInfoActivity;end')">My Device Info</button>
+        <button class="btn" onclick="go('intent:#Intent;action=android.settings.INTERNAL_STORAGE_SETTINGS;end')">Storage Settings</button>
+        <p style='color:#aaa;font-size:12px;margin:5px 0;'>Tip: Tap "Build number" 7 times to enable Developer Options</p>
+    </div>
+
+    <div class="section">
+        <h2>Crestron / Grandstream Specific</h2>
+        <button class="btn success" onclick="go('intent:#Intent;component=com.crestron.settings/.ui.admin.AdminActivity;end')">Crestron Admin Settings</button>
+        <button class="btn" onclick="go('intent:#Intent;component=com.crestron.settings/.ui.about.AboutActivity;end')">Crestron About</button>
+        <button class="btn" onclick="go('intent:#Intent;component=com.base.module.gmiservice/.GMIService;end')">GMI Service</button>
+        <button class="btn" onclick="go('intent:#Intent;action=com.grandstream.settings;end')">Grandstream Settings</button>
+        <button class="btn" onclick="go('intent:#Intent;component=com.gs.phone/.GsPhone;end')">GS Phone</button>
     </div>
 
     <div class="section">
@@ -131,12 +155,25 @@
     </div>
 
     <div class="section">
-        <h2>Dialer / Telephony</h2>
-        <button class="btn" onclick="go('tel:*#*#4636#*#*')">Testing Menu (*#*#4636#*#*)</button>
-        <button class="btn" onclick="go('tel:*#*#7378423#*#*')">Service Menu</button>
-        <button class="btn" onclick="go('tel:*#*#232338#*#*')">WiFi MAC Address</button>
-        <button class="btn" onclick="go('tel:*#*#8255#*#*')">GTalk Service Monitor</button>
-        <button class="btn" onclick="go('intent:#Intent;action=android.intent.action.DIAL;end')">Open Dialer</button>
+        <h2>Secret Codes (Try via Dialer)</h2>
+        <button class="btn success" onclick="go('tel:*#*#4636#*#*')">*#*#4636#*#* (Testing Menu)</button>
+        <button class="btn success" onclick="go('tel:*#*#7378423#*#*')">*#*#7378423#*#* (Service Menu)</button>
+        <button class="btn" onclick="go('tel:*#*#2846579#*#*')">*#*#2846579#*#* (Hidden Menu)</button>
+        <button class="btn" onclick="go('tel:*#*#197328640#*#*')">*#*#197328640#*#* (Service Mode)</button>
+        <button class="btn" onclick="go('tel:*#*#232338#*#*')">*#*#232338#*#* (WiFi MAC)</button>
+        <button class="btn" onclick="go('tel:*#*#8255#*#*')">*#*#8255#*#* (GTalk Monitor)</button>
+        <button class="btn" onclick="go('tel:*#*#0*#*#*')">*#*#0*#*#* (LCD Test)</button>
+        <button class="btn" onclick="go('tel:##3424#')">##3424# (Diagnostic Mode)</button>
+        <button class="btn" onclick="go('intent:#Intent;action=android.intent.action.DIAL;end')">Open Dialer App</button>
+    </div>
+
+    <div class="section">
+        <h2>ADB Enable via Intent Broadcast</h2>
+        <button class="btn danger" onclick="go('intent:#Intent;action=android.provider.Settings.ACTION_ADB_WIFI_SETTINGS;end')">ADB WiFi Settings</button>
+        <button class="btn danger" onclick="go('intent:#Intent;action=com.android.settings.WIRELESS_ADB_SETTINGS;end')">Wireless ADB Settings</button>
+        <button class="btn" onclick="go('intent:#Intent;action=android.settings.WIRELESS_SETTINGS;end')">Wireless Settings</button>
+        <button class="btn" onclick="go('intent:#Intent;action=android.settings.APN_SETTINGS;end')">APN Settings</button>
+        <button class="btn" onclick="go('intent:#Intent;action=android.settings.DATA_ROAMING_SETTINGS;end')">Data Roaming Settings</button>
     </div>
 
     <div class="section">
